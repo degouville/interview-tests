@@ -1,0 +1,11 @@
+- TODO: [OK] Create a Homepage.
+- TODO: [OK] Create dummy datas.
+- TODO: [OK] Show a list of products in the homepage.
+- TODO: [OK] Sort products by ascending price.
+- TODO: [OK] Create a login form to access the backoffice (authentification).
+- TODO: [OK] List all users.
+- TODO: [OK] List all products.
+- TODO: [OK] Add CRUD actions for each list.
+- TODO: [OK] Create a logout bouton with redirection to the Frontoffice.
+
+- NOTE: [OK] A product must contain a name and a price.

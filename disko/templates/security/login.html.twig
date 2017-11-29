@@ -1,0 +1,92 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    Disko App | Login Form
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style type="text/css" media="screen">
+        .form{
+            background: #F9F9F9;
+            padding: 2rem 1rem;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    {% if error %}
+        <section class="section" id="error">
+            <div class="container">
+                <article class="message is-danger">
+                    <div class="message-header">
+                        <p>Erreur</p>
+                        <button class="delete" aria-label="delete"
+                            onclick="document.getElementById('error').remove()"
+                        ></button>
+                    </div>
+                    <div class="message-body">
+                        {{ error.messageKey|trans(error.messageData, 'security') }}
+                    </div>
+                </article>
+            </div>
+        </section>
+    {% endif %}
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-half">
+
+                    <form class="form" action="{{ path('login') }}" method="post">
+                        <div class="field">
+                            <p class="control has-icons-left has-icons-right">
+                                <input
+                                    class="input"
+                                    type="text"
+                                    name="_username"
+                                    placeholder="Username"
+                                    value="{{ last_username }}"
+                                    id="username"
+                                />
+
+                                <span class="icon is-small is-left">
+                                    <i class="fa fa-envelope"></i>
+                                </span>
+                                <span class="icon is-small is-right">
+                                    <i class="fa fa-check"></i>
+                                </span>
+                            </p>
+                        </div>
+                        <div class="field">
+                            <p class="control has-icons-left">
+                                <input
+                                    class="input"
+                                    type="password"
+                                    placeholder="Password"
+                                    name="_password"
+                                    id="password"
+                                />
+
+                                <span class="icon is-small is-left">
+                                    <i class="fa fa-lock"></i>
+                                </span>
+                            </p>
+                        </div>
+                        <div class="field">
+                            <input type="hidden" name="_target_path" value="/admin" />
+
+                            <p class="control">
+                                <button class="button is-success">
+                                    Login
+                                </button>
+                            </p>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

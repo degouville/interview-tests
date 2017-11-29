@@ -1,0 +1,52 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    Disko App
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style type="text/css" media="screen">
+        .products{
+            padding: 2rem 0 0 0;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title is-1">Disko Test App</h1>
+            </div>
+        </div>
+    </section>
+
+    <section class="products">
+        <div class="container">
+            {% if products %}
+                <table class="table is-striped is-narrow is-fullwidth">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Produit</th>
+                            <th>Prix</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for product in products %}
+                            <tr>
+                                <td><b>{{ loop.index }}</b></td>
+                                <td>{{ product.name }}</td>
+                                <td>{{ product.price|replace({'.': ','}) }}€</td>
+                            </tr>
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+            {% else %}
+                <p>Il n'y a pas de produit.</p>
+            {% endif %}
+        </div>
+    </section>
+{% endblock %}

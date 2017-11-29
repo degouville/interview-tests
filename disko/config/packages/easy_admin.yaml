@@ -1,0 +1,10 @@
+easy_admin:
+    entities:
+        - App\Entity\Product
+        - App\Entity\User
+
+    design:
+        menu:
+            - { label: '• Homepage', url: '/' }
+            - Product
+            - User
