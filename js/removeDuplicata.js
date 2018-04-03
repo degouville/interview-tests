@@ -13,4 +13,4 @@ const removeDuplicate = arr => [...new Set(arr)].sort((a, b) => a - b)
 // NOTE: Test the removeDuplicate() function
 const myArrayWithoutDuplicates = removeDuplicate(myArrayWithDuplicates)
 
-console.log(myArrayWithoutDuplicates)
+console.log(myArrayWithoutDuplicates) // you'll get [ 1, 2, 3, 5, 10 ]
