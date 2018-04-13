@@ -8,7 +8,8 @@ const myArrayWithDuplicates = [2, 3, 3, 10, 2, 5, 1]
 // 2nd: Given that Set return an Object, I'll spread it into a new Array
 // BONUS: now I just want to get this array sorted so I use the .sort function
 // ... but 10 came before 2 so I fix sort with (a, b) => a - b as callback
-const removeDuplicate = arr => [...new Set(arr)].sort((a, b) => a - b)
+const asc = (a, b) => a - b // inverse should be `const desc = (a, b) => a + b`
+const removeDuplicate = arr => [...new Set(arr)].sort(asc)
 
 // NOTE: Test the removeDuplicate() function
 const myArrayWithoutDuplicates = removeDuplicate(myArrayWithDuplicates)
