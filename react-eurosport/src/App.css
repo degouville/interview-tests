@@ -1,0 +1,11 @@
+@import '~antd/dist/antd.css';
+
+.App-Header {
+  padding: 3em;
+  height: inherit;
+}
+
+.App-Header .App-Title {
+  font-size: 3em;
+  color: #FFF;
+}
